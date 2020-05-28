@@ -1,6 +1,6 @@
 # Android Summer Bootcamp 2020 🚀
 
-![Janin's picture](images/profile_picture.png)
+![Janin's picture](images/profile_picture.jpg)
 
 
 **Name**: Janin Culhaoglu

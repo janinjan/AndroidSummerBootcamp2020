@@ -16,7 +16,7 @@ class GameFactory {
         return deck
     }
 
-    // Function that deal two cards from the deck
+    // Function that deals two cards from the deck
     fun dealHand(deck: MutableList<Card>, numberOfCards: Int = 2): MutableList<Card> {
         val userCards = mutableListOf<Card>() // Create an empty mutable list of Card
 
@@ -26,5 +26,21 @@ class GameFactory {
             deck.remove(randomCard) // remove this card from the deck to not have it again
         }
         return userCards
+    }
+
+    // Function to figure out the pip value of the card and add it's value to a total
+    fun evaluateHand(hand: List<Card>): Int {
+        var total = 0
+
+        for (card in hand) {
+            if (card.pip == "J" || card.pip == "Q" || card.pip == "K") {
+                total += 10
+            } else if (card.pip == "A") {
+                total += 11
+            } else {
+                total += card.pip.toInt()
+            }
+        }
+        return total
     }
 }

@@ -15,4 +15,16 @@ class GameFactory {
         }
         return deck
     }
+
+    // Function that deal two cards from the deck
+    fun dealHand(deck: MutableList<Card>, numberOfCards: Int = 2): MutableList<Card> {
+        val userCards = mutableListOf<Card>() // Create an empty mutable list of Card
+
+        for (card in 0 until numberOfCards) {
+            val randomCard = deck.random()
+            userCards.add(randomCard) // add a random card to userCards
+            deck.remove(randomCard) // remove this card from the deck to not have it again
+        }
+        return userCards
+    }
 }

@@ -1,6 +1,6 @@
 class GameFactory {
 
-    // Function to create a collection of suits and a collection of pips and return the MutableSet of Cards
+    // Create a collection of suits and a collection of pips and return the MutableSet of Cards
     fun createDeck(): MutableSet<Card> {
         val suits = arrayOf('\u2663', '\u2660', '\u2666', '\u2665')
         val pips = arrayOf("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A")
@@ -16,8 +16,8 @@ class GameFactory {
         return deck
     }
 
-    // Function that deals two cards from the deck
-    fun dealHand(deck: MutableList<Card>, numberOfCards: Int = 2): MutableList<Card> {
+    // Deal two cards from the deck
+    fun dealHand(deck: MutableList<Card>, numberOfCards: Int = 2): List<Card> {
         val userCards = mutableListOf<Card>() // Create an empty mutable list of Card
 
         for (card in 0 until numberOfCards) {
@@ -25,10 +25,10 @@ class GameFactory {
             userCards.add(randomCard) // add a random card to userCards
             deck.remove(randomCard) // remove this card from the deck to not have it again
         }
-        return userCards
+        return userCards.toList()
     }
 
-    // Function to figure out the pip value of the card and add it's value to a total
+    // Figure out the pip value of the card and add it's value to a total
     fun evaluateHand(hand: List<Card>): Int {
         var total = 0
 
@@ -42,5 +42,16 @@ class GameFactory {
             }
         }
         return total
+    }
+
+    // Print the result and display winning message if total is 21
+    fun printResults(total: Int, hand: List<Card>) {
+        var cardToPrint = ""
+        val winMessage = if (total == 21) "\uD83C\uDF89 Congratulations, you win!" else ""
+
+        for (card in hand) {
+            cardToPrint += "\n${card.pip} ${card.suit}"
+        }
+        println("Your hand was: $cardToPrint \nFor a total of: $total \n$winMessage")
     }
 }

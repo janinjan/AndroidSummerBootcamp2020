@@ -44,14 +44,24 @@ class GameFactory {
         return total
     }
 
-    // Print the result and display winning message if total is 21
+    // Print the result and display message according to it
     fun printResults(total: Int, hand: List<Card>) {
         var cardToPrint = ""
-        val winMessage = if (total == 21) "\uD83C\uDF89 Congratulations, you win!" else ""
+        val message = when (total) {
+            21 -> {
+                "\uD83C\uDF89 Congratulations, you win!"
+            }
+            22 -> {
+                "\uD83D\uDCA2 You lose!"
+            }
+            else -> {
+                ""
+            }
+        }
 
         for (card in hand) {
             cardToPrint += "\n${card.pip} ${card.suit}"
         }
-        println("Your hand was: $cardToPrint \nFor a total of: $total \n$winMessage")
+        println("Your hand was: $cardToPrint \nFor a total of: $total \n$message")
     }
 }

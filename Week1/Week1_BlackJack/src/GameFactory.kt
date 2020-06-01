@@ -17,7 +17,7 @@ class GameFactory {
     }
 
     // Deal two cards from the deck
-    fun dealHand(deck: MutableList<Card>, numberOfCards: Int = 2): List<Card> {
+    fun dealHand(deck: MutableList<Card>, numberOfCards: Int): List<Card> {
         val userCards = mutableListOf<Card>() // Create an empty mutable list of Card
 
         for (card in 0 until numberOfCards) {

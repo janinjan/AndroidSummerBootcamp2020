@@ -1,2 +1,4 @@
-class Card(val pip: String,
-           val suit: Char)
+data class Card(
+        val pip: String,
+        val suit: Char
+)

@@ -22,3 +22,16 @@ Swift was my first programming language and I love it, I love coding! 👩🏻�
 My next step is to learn Android development with the **Raywenderlich Android bootcamp** of 3 months!
 And I hope to get a job as an iOS/Android Developer in September 2020!
 
+&nbsp;
+&nbsp;
+## Bootcamp challenges
+
+**Week 1**: Deal and Evaluate an Initial Hand of Blackjack
+
+Create a program that creates a deck of cards, deals two cards from that deck into a hand and evaluates that hand of cards by finding the sum of the pips. 
+Display the cards in the hand and the total of the pips in the hand. 
+Utilize classes, collections and functions.
+
+| <img src="Images/Week1.png" width="300"> | 
+|:--:| 
+| *Preview of Week 1 challenge* |

@@ -13,15 +13,15 @@ fun main() {
     """.trimIndent())
 
     // Create deck
-    val deck = gameFactory.createDeck().toMutableList()
+    val deck = gameFactory.createDeck()
 
     // Give two cards to the player in a hand
-    val dealHand = gameFactory.dealHand(deck, 2)
+    val dealHand = gameFactory.dealHand(deck)
 
     // Evaluate the total sum of hand
     val evaluate = gameFactory.evaluateHand(dealHand)
 
     // Print the result and display message
     println("\n🂡-------Result-------🃁")
-    val printResult = gameFactory.printResults(evaluate, dealHand)
+    gameFactory.printResults(evaluate, dealHand)
 }

@@ -1,6 +1,5 @@
 class GameFactory {
 
-    // Create a collection of suits and a collection of pips and return the MutableSet of Cards
     fun createDeck(): MutableSet<Card> {
         val suits = arrayOf('\u2663', '\u2660', '\u2666', '\u2665')
         val pips = arrayOf("2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A")
@@ -17,41 +16,42 @@ class GameFactory {
     }
 
     // Deal two cards from the deck
-    fun dealHand(deck: MutableList<Card>, numberOfCards: Int): List<Card> {
-        val userCards = mutableListOf<Card>() // Create an empty mutable list of Card
+    fun dealHand(deck: MutableSet<Card>, numberOfCards: Int = 2): MutableSet<Card> {
+        val userCards = mutableSetOf<Card>()
 
         for (card in 0 until numberOfCards) {
             val randomCard = deck.random()
-            userCards.add(randomCard) // add a random card to userCards
-            deck.remove(randomCard) // remove this card from the deck to not have it again
+            userCards.add(randomCard)
+            deck.remove(randomCard)
         }
-        return userCards.toList()
+        return userCards
     }
 
     // Figure out the pip value of the card and add it's value to a total
-    fun evaluateHand(hand: List<Card>): Int {
-        var total = 0
+    fun evaluateHand(hand: MutableSet<Card>): Int {
+        var total: Int = 0
 
         for (card in hand) {
-            if (card.pip == "J" || card.pip == "Q" || card.pip == "K") {
-                total += 10
-            } else if (card.pip == "A") {
-                total += 11
-            } else {
-                total += card.pip.toInt()
+            total += when (card.pip) {
+                "J", "Q", "K" -> 10
+                "A" -> 11
+                else -> card.pip.toInt()
             }
         }
         return total
     }
 
     // Print the result and display message according to it
-    fun printResults(total: Int, hand: List<Card>) {
+    fun printResults(total: Int, hand: Set<Card>) {
+        val BLACKJACK_AMOUNT = 21
+        val LOSE_THRESHOLD = 22
+
         var cardToPrint = ""
         val message = when (total) {
-            21 -> {
+            BLACKJACK_AMOUNT -> {
                 "\uD83C\uDF89 Congratulations, you win!"
             }
-            22 -> {
+            LOSE_THRESHOLD -> {
                 "\uD83D\uDCA2 You lose!"
             }
             else -> {

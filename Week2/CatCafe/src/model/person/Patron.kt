@@ -1,9 +1,7 @@
-package person
-
-import java.util.*
+package model.person
 
 class Patron(
-    id: String = UUID.randomUUID().toString(),
+    id: String,
     firsName: String,
     lastName: String,
     phoneNumber: String,

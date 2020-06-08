@@ -1,4 +1,4 @@
-package model
+package model.cafe
 
 import java.util.*
 
@@ -6,4 +6,5 @@ open class Item(
     val id: String = UUID.randomUUID().toString(),
     val description: String,
     val quantity: Int,
-    val price: Double)
+    val price: Double
+)

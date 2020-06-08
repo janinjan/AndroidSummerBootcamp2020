@@ -1,12 +1,12 @@
-package model
+package model.cafe
 
-import model.person.People
 import java.util.*
 
 class Receipt(
-    receiptID: String = UUID.randomUUID().toString(),
+    val receiptID: String = UUID.randomUUID().toString(),
     val items: MutableSet<Item> = mutableSetOf()
 ) {
+
     val total: Double
         get() = getTotalAmount()
 

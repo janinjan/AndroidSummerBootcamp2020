@@ -1,9 +1,9 @@
-package model
+package model.shelter
 
-import java.util.*
+import model.animals.Cat
 
 data class Shelter(
-    val shelterID: String = UUID.randomUUID().toString(),
+    val shelterID: String,
     val address: String,
     val phoneNumber: String,
     val cats: MutableSet<Cat> = mutableSetOf()

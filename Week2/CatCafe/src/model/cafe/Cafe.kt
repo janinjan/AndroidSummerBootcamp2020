@@ -1,7 +1,6 @@
 package model.cafe
 
 import model.Utility
-import model.person.Customer
 import model.person.Employee
 import model.person.People
 import java.util.*

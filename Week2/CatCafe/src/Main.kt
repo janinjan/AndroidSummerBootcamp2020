@@ -1,6 +1,4 @@
 import helper.CafeController
-import model.cafe.Cafe
-import model.Utility
 
 fun main() {
     val cafeController = CafeController()
@@ -13,8 +11,7 @@ fun main() {
 
     cafeController.printNumberOfSponsoredCat()
 
-    println("______Number of adoptions_____")
-    cafeController.adoptCat(catId = Utility.choupette().id, person = Utility.john())
-
     cafeController.printSelledItems(day = "Monday")
+
+    cafeController.printAdoptionsList()
 }

@@ -2,14 +2,13 @@ package model
 
 import model.animals.Cat
 import model.cafe.Item
-import model.cafe.Receipt
 import model.person.Customer
 import model.person.Employee
 import model.shelter.Shelter
 import java.util.*
 
 /**
- * This class is to populate the data of the cat cafe
+ * Utility populates the data of the cat cafe
  * */
 object Utility {
 

@@ -37,7 +37,7 @@ class CafeController {
     }
 
     fun sellItems(items: List<Item>, customerId: String) {
-        val receipt = cafe.getReceipt(items, customerId)
+        val receipt = cafe.getReceipt(items as MutableList<Item>, customerId)
     }
 
     fun getNumberOfAdoptionsPerShelter(): Map<String, Int> {
@@ -105,8 +105,13 @@ class CafeController {
             """
             _____Number of sponsored cats____
             The number of sponsored cat is ${cafe.getSponsoredCats()}
-            
         """.trimIndent()
         )
+    }
+
+    fun printAdoptionsList() {
+        println()
+        println("_____Number of adoptions_____")
+        adoptCat(catId = Utility.choupette().id, person = Utility.john())
     }
 }

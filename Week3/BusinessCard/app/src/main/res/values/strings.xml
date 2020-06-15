@@ -4,11 +4,11 @@
     <string name="job">Mobile App Developer</string>
     <string name="mail">janin.culhaoglu@gmail.com</string>
     <string name="region">Paris, France</string>
-    <string name="experienceButton">Other experience</string>
+    <string name="experienceButton">Show other experience</string>
     <string name="phoneNumber">+33 603410585</string>
     <string name="experienceText">%1$d</string>
     <string name="profilePictureDesc">This is the profile picture</string>
-    <string name="homeIconDesc">This a home icon</string>
-    <string name="phoneIconDesc">This a mobile phone icon</string>
-    <string name="envelopeDesc">This an evelope icon</string>
+    <string name="homeIconDesc">This is a home icon</string>
+    <string name="phoneIconDesc">This is a mobile phone icon</string>
+    <string name="envelopeDesc">This is an envelope icon</string>
 </resources>

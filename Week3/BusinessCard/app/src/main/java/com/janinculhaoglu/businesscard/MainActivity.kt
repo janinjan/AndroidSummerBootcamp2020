@@ -2,6 +2,7 @@ package com.janinculhaoglu.businesscard
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.animation.AnimationUtils
 import android.widget.Button
 import android.widget.TextView
 
@@ -52,6 +53,9 @@ class MainActivity : AppCompatActivity() {
             experienceNumber += 1
         }
         experienceTextView.text = experienceList[experienceNumber]
+
+        val bounceAnimation = AnimationUtils.loadAnimation(this, R.anim.scale)
+        experienceTextView.startAnimation(bounceAnimation)
     }
 
     private fun restoreExperience() {

@@ -10,19 +10,14 @@
         android:id="@+id/grayRectangle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorGrayView"
-        tools:layout_editor_absoluteX="32dp"
-        tools:layout_editor_absoluteY="0dp" />
+        android:background="@color/colorGrayView" />
 
     <View
         android:id="@+id/greenRectangle"
         android:layout_width="337dp"
         android:layout_height="match_parent"
         android:background="@color/colorGreenView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
         android:id="@+id/fullnameTextView"
@@ -39,10 +34,11 @@
 
     <ImageView
         android:id="@+id/profilImageView"
-        android:layout_width="205dp"
+        android:layout_width="wrap_content"
         android:layout_height="170dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:adjustViewBounds="true"
         android:contentDescription="@string/profilePictureDesc"
         app:layout_constraintBottom_toTopOf="@+id/experienceTextView"
         app:layout_constraintEnd_toStartOf="@+id/greenRectangle"
@@ -58,7 +54,6 @@
         android:text="@string/job"
         android:textSize="@dimen/job_text_size"
         app:layout_constraintEnd_toEndOf="@+id/grayRectangle"
-        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="@+id/greenRectangle"
         app:layout_constraintTop_toBottomOf="@+id/fullnameTextView" />
 
@@ -95,7 +90,6 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/greenRectangle"
-        app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="@+id/grayRectangle"
         app:layout_constraintTop_toBottomOf="@+id/grayRectangle"
         app:layout_constraintVertical_bias="1.0" />
@@ -111,7 +105,6 @@
         android:textSize="@dimen/info_text_size"
         app:layout_constraintBottom_toTopOf="@+id/newExperienceButton"
         app:layout_constraintEnd_toStartOf="@+id/greenRectangle"
-        app:layout_constraintHorizontal_bias="0.533"
         app:layout_constraintStart_toStartOf="@+id/grayRectangle"
         app:layout_constraintTop_toBottomOf="@+id/profilImageView" />
 

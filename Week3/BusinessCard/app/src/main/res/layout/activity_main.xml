@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <View
+        android:id="@+id/grayRectangle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorGrayView" />
+
+    <TextView
+        android:id="@+id/fullnameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/fullname"
+        android:textSize="@dimen/name_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/profilImageView" />
+
+    <ImageView
+        android:id="@+id/profilImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="170dp"
+        android:layout_marginTop="40dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/business_profil_picture"
+        android:contentDescription="@string/profilePictureDesc"/>
+
+    <TextView
+        android:id="@+id/job"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/job"
+        android:textSize="@dimen/job_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fullnameTextView" />
+
+    <View
+        android:id="@+id/greenRectangle"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:background="@color/colorGreenView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/mail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_icon_start"
+        android:text="@string/mail"
+        android:textSize="@dimen/info_text_size"
+        app:layout_constraintStart_toEndOf="@+id/envelopeIconImageView"
+        app:layout_constraintTop_toTopOf="@+id/envelopeIconImageView" />
+
+    <TextView
+        android:id="@+id/region"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_icon_start"
+        android:layout_marginTop="4dp"
+        android:text="@string/region"
+        android:textSize="@dimen/info_text_size"
+        app:layout_constraintStart_toEndOf="@+id/homeIconImageView"
+        app:layout_constraintTop_toTopOf="@+id/homeIconImageView" />
+
+    <Button
+        android:id="@+id/newExperienceButton"
+        android:layout_width="126dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="53dp"
+        android:layout_marginBottom="88dp"
+        android:background="@color/colorGreenView"
+        android:text="@string/experienceButton"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        app:layout_constraintBottom_toTopOf="@+id/greenRectangle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/experienceTextView" />
+
+    <TextView
+        android:id="@+id/experienceTextView"
+        android:layout_width="281dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="47dp"
+        android:text="@string/experienceText"
+        android:textAlignment="center"
+        android:textSize="@dimen/info_text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/job" />
+
+    <ImageView
+        android:id="@+id/homeIconImageView"
+        android:layout_width="22dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="@dimen/padding_icon_land_start"
+        android:layout_marginTop="@dimen/margin_top_info_text"
+        android:contentDescription="@string/homeIconDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/envelopeIconImageView"
+        app:srcCompat="@drawable/home_icon" />
+
+    <ImageView
+        android:id="@+id/envelopeIconImageView"
+        android:layout_width="23dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="@dimen/padding_icon_land_start"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/envelopeDesc"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/greenRectangle"
+        app:srcCompat="@drawable/envelope_icon" />
+
+    <ImageView
+        android:id="@+id/mobilePhoneIconImageView"
+        android:layout_width="23dp"
+        android:layout_height="22dp"
+        android:layout_marginStart="@dimen/padding_icon_land_start"
+        android:layout_marginTop="@dimen/margin_top_info_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/homeIconImageView"
+        app:srcCompat="@drawable/mobile_phone_green_icon"
+        android:contentDescription="@string/phoneIconDesc" />
+
+    <TextView
+        android:id="@+id/phoneTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/padding_icon_start"
+        android:text="@string/phoneNumber"
+        android:textSize="@dimen/info_text_size"
+        app:layout_constraintStart_toEndOf="@+id/mobilePhoneIconImageView"
+        app:layout_constraintTop_toTopOf="@+id/mobilePhoneIconImageView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

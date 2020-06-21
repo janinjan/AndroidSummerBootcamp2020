@@ -1,5 +1,6 @@
 package com.janinculhaoglu.recyclerview
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,11 @@ import kotlinx.android.synthetic.main.cell_tvshow.view.*
 
 
 class TVShowsAdapter : RecyclerView.Adapter<TVShowsAdapter.TVShowsViewHolder>() {
+
+    fun onTVShowClick(index: Int, context: Context) {
+        val show = tvshowsList[index]
+        println(show.title) // Test to print the title of the selected cell
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TVShowsViewHolder {
         // Create the view in XML
@@ -28,17 +34,29 @@ class TVShowsAdapter : RecyclerView.Adapter<TVShowsAdapter.TVShowsViewHolder>() 
         holder.fillWithTVShow(tvShow)
     }
 
-    class TVShowsViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView) {
+    // Inner class to be able to have access to OnTVShowClick()
+    inner class TVShowsViewHolder(rootView: View) : RecyclerView.ViewHolder(rootView),
+        View.OnClickListener {
         private val title = rootView.ui_title
         private val poster = rootView.ui_poster
         private val genre = rootView.ui_genre
         private val rating = rootView.ui_rating
+
+        init {
+            rootView.setOnClickListener(this)
+        }
 
         fun fillWithTVShow(tvShow: TVShow) {
             title.text = tvShow.title
             poster.setImageResource(tvShow.poster)
             genre.text = tvShow.genre
             rating.text = tvShow.rating.toString()
+        }
+
+        override fun onClick(v: View?) {
+            if (v != null) {
+                onTVShowClick(adapterPosition, v.context) // We give click info to the adapter
+            }
         }
     }
 }

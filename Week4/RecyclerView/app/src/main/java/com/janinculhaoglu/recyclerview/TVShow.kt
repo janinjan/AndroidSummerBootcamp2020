@@ -5,5 +5,7 @@ data class TVShow(
     val title: String,
     val releaseDate: String,
     val summary: String,
-    val poster: Int
+    val poster: Int,
+    val genre: String,
+    val rating: Double?
 )

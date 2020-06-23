@@ -8,7 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.cell_tvshow.view.*
 
 
-class TVShowsAdapter : RecyclerView.Adapter<TVShowsAdapter.TVShowsViewHolder>() {
+class TVShowsAdapter(val clickListener: TvShowListClickListener) : RecyclerView.Adapter<TVShowsAdapter.TVShowsViewHolder>() {
+
+    interface TvShowListClickListener {
+        fun listItemClicked(list: TVShow)
+    }
 
     fun onTVShowClick(index: Int, context: Context) {
         val show = tvshowsList[index]
@@ -32,6 +36,9 @@ class TVShowsAdapter : RecyclerView.Adapter<TVShowsAdapter.TVShowsViewHolder>() 
     override fun onBindViewHolder(holder: TVShowsViewHolder, position: Int) {
         val tvShow = tvshowsList[position]
         holder.fillWithTVShow(tvShow)
+        holder.itemView.setOnClickListener {
+            clickListener.listItemClicked(tvShow)
+        }
     }
 
     // Inner class to be able to have access to OnTVShowClick()

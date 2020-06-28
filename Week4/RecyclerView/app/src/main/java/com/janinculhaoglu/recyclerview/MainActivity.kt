@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity(), TVShowsAdapter.TvShowListClickListener {
+class MainActivity : AppCompatActivity() {
 
     companion object {
         const val INTENT_LIST_KEY = "list"
@@ -16,17 +16,17 @@ class MainActivity : AppCompatActivity(), TVShowsAdapter.TvShowListClickListener
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        ui_tvshowlist.adapter = TVShowsAdapter(this)
+        ui_tvshowlist.adapter = TVShowsAdapter(::listItemClicked)
         ui_tvshowlist.layoutManager = LinearLayoutManager(this)
     }
 
     private fun showShowTvListItems(list: TVShow) {
-        val tvShowListItem = Intent(this, DetailActivity::class.java)
-        tvShowListItem.putExtra(INTENT_LIST_KEY, list)
-        startActivity(tvShowListItem)
+        Intent(this, DetailActivity::class.java)
+            .apply { putExtra(INTENT_LIST_KEY, list) }
+            .run { startActivity(this) }
     }
 
-    override fun listItemClicked(list: TVShow) {
+    private fun listItemClicked(list: TVShow) {
         showShowTvListItems(list)
     }
 }

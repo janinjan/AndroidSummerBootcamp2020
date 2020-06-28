@@ -9,8 +9,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/cardElevation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -20,8 +20,8 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/ui_poster"
-                android:layout_height="200dp"
+                android:id="@+id/uiPoster"
+                android:layout_height="@dimen/poster_height"
                 android:layout_width="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/posterDesc"
@@ -31,20 +31,20 @@
                 app:srcCompat="@drawable/ic_launcher_background" />
 
             <TextView
-                android:id="@+id/ui_title"
+                android:id="@+id/uiTitle"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_element"
                 android:text="@string/title"
                 android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                app:layout_constraintBottom_toBottomOf="@+id/ui_genre"
+                app:layout_constraintBottom_toBottomOf="@+id/uiGenre"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ui_poster"
+                app:layout_constraintStart_toEndOf="@+id/uiPoster"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.20" />
 
             <TextView
-                android:id="@+id/ui_genre"
+                android:id="@+id/uiGenre"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_element"
@@ -52,8 +52,8 @@
                 android:text="@string/genre"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/ui_poster"
-                app:layout_constraintTop_toBottomOf="@+id/ui_title" />
+                app:layout_constraintStart_toEndOf="@+id/uiPoster"
+                app:layout_constraintTop_toBottomOf="@+id/uiTitle" />
 
             <ImageView
                 android:id="@+id/starImageView"
@@ -61,12 +61,12 @@
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/ratingDesc"
-                app:layout_constraintBottom_toBottomOf="@id/ui_rating"
-                app:layout_constraintEnd_toStartOf="@id/ui_rating"
+                app:layout_constraintBottom_toBottomOf="@id/uiRating"
+                app:layout_constraintEnd_toStartOf="@id/uiRating"
                 app:srcCompat="@drawable/star" />
 
             <TextView
-                android:id="@+id/ui_rating"
+                android:id="@+id/uiRating"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/margin_element"

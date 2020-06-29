@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_element">10dp</dimen>
+    <dimen name="card_corner_radius">8dp</dimen>
+    <dimen name="cardElevation">8dp</dimen>
+    <dimen name="poster_height">200dp</dimen>
+</resources>

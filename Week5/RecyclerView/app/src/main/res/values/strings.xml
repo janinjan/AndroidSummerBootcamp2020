@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RecyclerView</string>
+    <string name="title">%1$d</string>
+    <string name="posterDesc">Poster of the TV show</string>
+    <string name="genre">%1$d</string>
+    <string name="rating">%1$d</string>
+    <string name="releaseDate">%1$d</string>
+    <string name="ratingDesc">star icon</string>
+    <string name="showDescription">%1$d</string>
+</resources>
